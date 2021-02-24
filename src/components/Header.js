@@ -48,16 +48,16 @@ const Header = ({ cart }) => {
 
                             <button 
                             className="cart-btn"
-                            onClick={() => setShowModal(openModal => !openModal)}
+                          
                             >
                                 <IconContext.Provider value={{ color: "white", className: "icon" }}>
                                     <RiShoppingCart2Fill />
                                 </IconContext.Provider>
                                 <div className="cart-counter">
                                     {cartCound} </div>
-                                    <ShopCart
+                                    {/* <ShopCart
                                     showModal={showModal}
-                                    setShowModal={setShowModal}/>
+                                    setShowModal={setShowModal}/> */}
                             </button>
                         </Nav.Link>
 
