@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useSelector } from 'react';
 import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
 import Logo from "../assets/logo.png";
 import User from "../assets/user.png";
@@ -13,17 +13,26 @@ import ShopCart from './ShopCart';
 
 const Header = ({ cart }) => {
 
-    const [cartCound, setCartCount] = useState(0);
-    const [showModal, setShowModal] = useState(false);
+    // const [cartCound, setCartCount] = useState(0);
+    // const [showModal, setShowModal] = useState(false);
 
-    useEffect(() => {
-        let count = 0;
-        cart.forEach((item) => {
-            count += item.qty;
-        })
 
-        setCartCount(count)
-    }, [cart, cartCound])
+    // useEffect(() => {
+    //     let count = 0;
+    //     cart.forEach((item) => {
+    //         count += item.qty;
+    //     })
+
+    //     setCartCount(count)
+    // }, [cart, cartCound])
+
+    // const cart = useSelector((state) => state.cart);
+    // console.log(cart);
+    // const { cartItems } = cart;
+  
+    // const getCartCount = () => {
+    //   return cartItems.reduce((qty, item) => Number(item.qty) + qty, 0);
+    // };
 
     return (
         <>
@@ -48,16 +57,17 @@ const Header = ({ cart }) => {
 
                             <button 
                             className="cart-btn"
-                            onClick={() => setShowModal(openModal => !openModal)}
+                           
                             >
                                 <IconContext.Provider value={{ color: "white", className: "icon" }}>
                                     <RiShoppingCart2Fill />
                                 </IconContext.Provider>
                                 <div className="cart-counter">
-                                    {cartCound} </div>
-                                    <ShopCart
+                                    {/* {getCartCount}  */}
+                                    </div>
+                                    {/* <ShopCart
                                     showModal={showModal}
-                                    setShowModal={setShowModal}/>
+                                    setShowModal={setShowModal}/> */}
                             </button>
                         </Nav.Link>
 
@@ -106,10 +116,10 @@ const NavWrapper = styled.div`
   }
 `;
 
-const mapStateToProps = state => {
-    return {
-        cart: state.ProductList.cart
-    }
-}
+// const mapStateToProps = state => {
+//     return {
+//         cart: state.ProductList.cart
+//     }
+// }
 
-export default connect(mapStateToProps)(Header);
+export default Header;
