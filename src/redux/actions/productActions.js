@@ -14,6 +14,7 @@ export const FetchProducts = () => async dispatch => {
         type: "PRODUCTS_LIST_SUCCESS",
         payload: res.data
     })
+    
     } catch(e) {
         dispatch({
             type: "PRODUCTS_LIST_FAIL"

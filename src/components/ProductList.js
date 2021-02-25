@@ -8,6 +8,7 @@ import _ from "lodash";
 import { FetchProducts } from "../redux/actions/productActions";
 import "../style/productList.css";
 import { addToCart } from "../redux/actions/shoppingActions";
+import ShopCart from "./ShopCart";
 
 
 const ProductList = ( {addToCart}) => {
@@ -145,6 +146,9 @@ const ProductList = ( {addToCart}) => {
         </div>
         <div>
             {ShowData()}
+        </div>
+        <div>
+          <ShopCart/>
         </div>
         </>
     )

@@ -8,13 +8,14 @@ import { RiShoppingCart2Fill } from "react-icons/ri";
 import styled from "styled-components";
 import "../style/header.css"
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import ShopCart from './ShopCart';
 
 
 const Header = ({ cart }) => {
 
     const [cartCound, setCartCount] = useState(0);
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         let count = 0;
@@ -44,7 +45,7 @@ const Header = ({ cart }) => {
                             />
                             <FaSearch />
                         </Form>
-                        <Nav.Link href="#cart" className="ml-auto">
+                        <Nav.Link className="ml-auto">
 
                             <button 
                             className="cart-btn"
@@ -61,7 +62,7 @@ const Header = ({ cart }) => {
                             </button>
                         </Nav.Link>
 
-                        <Nav.Link className="ml-auto" href="#profile">
+                        <Nav.Link className="ml-auto" href="/">
                             <div className="profile">
                                 <div>
                                 <p>Saiby Alimentos</p> 

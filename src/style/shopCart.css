@@ -1,28 +1,19 @@
-.overlay {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.582);
-    backdrop-filter: blur(4px);
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-  }
+.back-store{
+  display: flex;
+  justify-content: left;
+}
 
-  .modal {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: auto;
-    width: 450px;
-    height: 400px;
-    background-color: white;
-    z-index: 1000;
-    border-radius: 30px;
-  }
+.title-shopcart{
+  display: flex;
+  justify-content: space-between;
+}
+
+.description{
+  display: flex;
+  justify-content: space-around;
+}
+
+.shop-product, .detail-product, .qty-product, .price-product{
+  display: flex;
+  justify-content: space-around;
+}
