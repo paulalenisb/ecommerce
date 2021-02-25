@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Navbar, Nav, Container, Form, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
 import Logo from "../assets/logo.png";
 import User from "../assets/user.png";
 import { FaSearch } from "react-icons/fa";
@@ -8,14 +8,10 @@ import { RiShoppingCart2Fill } from "react-icons/ri";
 import styled from "styled-components";
 import "../style/header.css"
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
-import ShopCart from './ShopCart';
-
 
 const Header = ({ cart }) => {
 
     const [cartCound, setCartCount] = useState(0);
-    // const [showModal, setShowModal] = useState(false);
 
     useEffect(() => {
         let count = 0;
@@ -29,15 +25,11 @@ const Header = ({ cart }) => {
     return (
         <>
             <NavWrapper>
-                {/* <Container> */}
                 <Navbar expand="lg">
                     <img className="logo" src={Logo} alt="logo" />
-
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-
                         <Form inline>
-
                             <FormControl
                                 type="text"
                                 placeholder="Busca marcas y productos..."
@@ -46,35 +38,28 @@ const Header = ({ cart }) => {
                             <FaSearch />
                         </Form>
                         <Nav.Link className="ml-auto">
-
-                            <button 
-                            className="cart-btn"
-                          
-                            >
+                            <button
+                                className="cart-btn">
                                 <IconContext.Provider value={{ color: "white", className: "icon" }}>
                                     <RiShoppingCart2Fill />
                                 </IconContext.Provider>
                                 <div className="cart-counter">
                                     {cartCound} </div>
-                                    {/* <ShopCart
-                                    showModal={showModal}
-                                    setShowModal={setShowModal}/> */}
                             </button>
                         </Nav.Link>
 
                         <Nav.Link className="ml-auto" href="/">
                             <div className="profile">
-                                <div>
-                                <p>Saiby Alimentos</p> 
-                            <p>Mi perfil</p> 
+                                <div className="txt-profile">
+                                    <p className="txt-p txt-name">Saiby Alimentos</p>
+                                    <p className="txt-p txt-myprofile">Mi perfil</p>
                                 </div>
-                                <img src={User} alt="logo" />
+                                <img className="img-profile" src={User} alt="logo" />
                             </div>
-                            
-                         </Nav.Link>
+
+                        </Nav.Link>
                     </Navbar.Collapse>
                 </Navbar>
-                {/* </Container> */}
             </NavWrapper>
         </>
     )
@@ -95,7 +80,7 @@ const NavWrapper = styled.div`
     padding: 0 20px;
     border-radius: 100px;
     input {
-        width: 100%;
+        width: 90% !important;
       border: none;
     }
     input:focus {

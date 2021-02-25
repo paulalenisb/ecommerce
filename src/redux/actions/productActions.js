@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const FetchProducts = () => async dispatch => {
-    try{
+    try {
         dispatch({
             type: "PRODUCTS_LIST_LOADING"
         })
@@ -10,12 +10,12 @@ export const FetchProducts = () => async dispatch => {
 
         console.log(res);
 
-    dispatch({
-        type: "PRODUCTS_LIST_SUCCESS",
-        payload: res.data
-    })
-    
-    } catch(e) {
+        dispatch({
+            type: "PRODUCTS_LIST_SUCCESS",
+            payload: res.data
+        })
+
+    } catch (e) {
         dispatch({
             type: "PRODUCTS_LIST_FAIL"
         })

@@ -31,27 +31,31 @@
 
 .card-body{
     padding: 10px !important;
-
 }
 
 .card-product{
     width: 200px;
-    height: 300px;
+    height: 320px;
     box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.137);
     padding: 0px;
 }
 
-.product-img{
+.card-img{
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-img{
+    margin: 0 auto;
     width: 80px !important;
-    height: auto;
+    height:auto;
     margin: 10px;
     align-items: center;
 }
 
 .stroke{
     display: flex;
-    /* flex-direction: row; */
     align-items: center;
     justify-content: space-between;
     align-content: center;
@@ -67,7 +71,6 @@
 .number-content{
     background-color: #1b9c55;
     border-radius: 10px;
-
 }
 
 .num_net{
@@ -87,7 +90,6 @@
     display: flex;
     justify-content: right;
     align-items: flex-end;
-
 }
 
 .num-price{
@@ -110,5 +112,4 @@
     width: 100%;
     background-color: #25c16a;
     border: none;
-
 }
